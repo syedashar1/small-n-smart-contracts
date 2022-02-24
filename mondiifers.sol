@@ -16,11 +16,19 @@ contract MyContract {
         _;
     }
     
+    modifier onlyWhen(){
+        require(block.timestamp > 1645691206); // time right now > epoch time
+        _;
+    }
+    
+    
     struct Person{
         int _id;
         string _firstName;
         string _lastName;
     }
+
+    
 
     function addPerson(string memory _firstName , string memory _lastName ) public onlyOwner  {
 
